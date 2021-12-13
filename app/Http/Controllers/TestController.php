@@ -23,6 +23,9 @@ class TestController extends Controller
         $this->productRepository = $productInterface;
         $this->eventRepository = $eventInterface;
     }
+    /**
+     * Function to test google firebase notification
+     */
     public function firebase()
     {
         $isfound = true;
@@ -39,6 +42,9 @@ class TestController extends Controller
             }
         }
     }
+    /**
+     * Function to test websocket
+     */
     public function websocket()
     {
         try {
@@ -58,6 +64,9 @@ class TestController extends Controller
             }
         }
     }
+    /**
+     * Function to save image {{Currently it is stored in public folder --- need to test for storage folder}}
+     */
     public function saveimage(Image $request){
         try{
             $filename='';
@@ -65,7 +74,7 @@ class TestController extends Controller
             $store=$this->SaveImageFromWeb($request,$filename,$error);
             //Store file name to database
             if(!$store){
-                throw new Exception("Web Image Store Exception : ".__METHOD__." ".$error)
+                throw new Exception("Web Image Store Exception : ".__METHOD__." ".$error);
             }
         }catch(Exception $ex){
             $this->WriteGeneralException($ex);
