@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
         /** User operation ends here */
     });
 });
+//Route bringing the application back to dashboard
 Route::group(['middleware' => ['web'], 'prefix' => 'project'], function () {
     Route::get('/{any}', 'HomeController@index')->where('any', '.*');
 });
