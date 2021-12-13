@@ -6,7 +6,17 @@ use Exception;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 trait ImageStore{
+    /**
+     * ----------------
+     * This class will contain test methods for saving image from browser
+     * and saving image from other devices such as android application
+     * 
+     * ----------------
+     */
     use WriteRead;
+    /**
+     * Saving Image from browser
+     */
     public function SaveImageFromWeb(Request $request,string &$filename,string &$error,array $params=[]){
         try{
             if($request->hasFile('document_1')){
@@ -30,6 +40,9 @@ trait ImageStore{
             return false;
         }
     }
+    /**
+     * Saving image from android application
+     */
     public function SaveImageFromMobile(Request $request,string &$filename,string &$error,array $params=[]){
         try{
             if($request->hasFile('document_1')){
