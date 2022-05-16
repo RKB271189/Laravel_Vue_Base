@@ -2,25 +2,26 @@
 
 namespace App\ORM_Model\ORM_Contract;
 
+/**
+ * All cumpulosory method to be implemented by models
+ */
 interface ModelContract
 {
-    public function Save(array $params, bool &$issaved = true, bool $isreturn = true): ?array;
+    //Implement method to store record
+    public function Save(array $params, bool $isreturn = true): ?array;
 
-    public function Update($primarykey, array $params, bool &$issaved = true, bool $isreturn = true): ?array;
+    //Implement method to update record
+    public function Update($primarykey, array $params, bool $isreturn = true): ?array;
 
-    public function Search($primarykey, bool &$isfound = true): ?array;
+    //Implement method to remove record
+    public function Remove($primarykey);
 
-    public function SearchOrFail($primarykey, bool &$isfound = true): ?array;
+    //Impement method to get all records (When fetching details for drop-down)
+    public function Select(): ?array;
 
-    public function SearchFirstOrFail(bool &$isfound = true, ...$arguments): ?array;
+    //Implement method to search records using primary key
+    public function Search($primarykey): ?array;
 
-    public function Remove($primarykey, bool &$isfound = true, int &$removecount = 0): bool;
-
-    public function GetRestore(bool &$isfound = true): ?array;
-
-    public function Restore($primarykey, bool &$isfound = true): ?array;
-
-    public function Look(bool &$isfound = true, ...$arguments): ?array;
-
-    public function Select(bool &$isfound = true): ?array;
+    //Implemnt method to serach records using primary key but fails if not found
+    public function SearchOrFail($primarykey): ?array;
 }

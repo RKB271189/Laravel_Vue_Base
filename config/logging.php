@@ -99,6 +99,11 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'general_exception' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/general_exception.log'),
+            'level' => 'info',
+        ],
     ],
 
 ];

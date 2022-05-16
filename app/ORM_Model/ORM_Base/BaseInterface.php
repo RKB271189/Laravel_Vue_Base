@@ -21,31 +21,24 @@ interface BaseInterface
 
 
     //Find Record By Primary Key or Model Not Found Exception
-    public function FindOrFail($primarykey, bool &$isfound = true): array;
-
-
-    //Find Record By Single Column First Record or Model Not Found Exception
-    public function FirstOrFail(bool &$isfound = true, ...$arguments): array;
-
+    public function FindOrFail($primarykey): array;
 
     //Find By Primary key (No model found exception) returns null
-    public function Find($primarykey, bool &$isfound = true): ?array;
-
-
-    //Find by different single column and value and fix = sign for where clause
-    public function Explore(bool &$isfound = true, ...$arguments): ?array;
-
+    public function Find($primarykey): ?array;
 
     //Delete row with primary key (Will only be soft deleted)
-    public function Delete($primarykey, bool &$isfound = true, int &$deletecount = 0): bool;
+    public function Delete($primarykey);
 
 
     //Get deleted records from the database
-    public function OnlyDeleted($primarykey = 0, bool &$isfound = true): ?array;
+    public function OnlyDeleted($primarykey, bool &$isfound = true): ?array;
+
+    //Get all deleted records
+    public function GetAllDeleted(bool &$isfound = true): ?array;
 
     //Restore deleted record
-    public function RestoreDeleted($primarykey, bool &$isfound = true): ?array;
+    public function RestoreDeleted($primarykey): ?array;
 
     //Get table details
-    public function Get(bool &$isfound = true): array;
+    public function Get(): array;
 }
