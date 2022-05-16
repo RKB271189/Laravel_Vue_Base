@@ -11,7 +11,8 @@ export default {
     };
   },
   created() {
-    this.$eventHub.$on("create-success", this.itemConfirmWithOk);
+    this.$eventHub.$on("create-success-popup", this.itemConfirmWithOk);
+    this.$eventHub.$on("create-success", this.itemCreated);
     this.$eventHub.$on("update-success", this.itemUpdated);
     this.$eventHub.$on("delete-success", this.itemDeleted);
   },

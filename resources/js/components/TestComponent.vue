@@ -63,7 +63,7 @@ export default {
     },
     submitwebsocket() {
       this.testsocket().then((response) => {
-        this.$eventHub.$emit("create-success", "Successfull", response);
+        this.$eventHub.$emit("create-success-popup", "Successfull", response);
       });
     },
   },

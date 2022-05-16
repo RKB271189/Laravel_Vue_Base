@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function delete($id)
     {
         try {
-            $delete = $this->productRepository->Remove(155);
+            $delete = $this->productRepository->Remove($id);
             if ($delete === 0)
                 throw new Exception("Unable to delete");
             return response()->json("Product deleted successfully.", 200);

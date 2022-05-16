@@ -93,10 +93,14 @@ export default {
       this.createdata()
         .then((response) => {
           //awsome notification create success
-          this.$eventHub.$emit("create-success", "Created", response);
+          this.$eventHub.$emit(
+            "create-success",
+            "Product created successfully",
+            response
+          );
           this.$router.push({ name: "product.summary" });
         })
-        .catch((error) => {         
+        .catch((error) => {
           //awsome notification error
           this.$eventHub.$emit("delete-success", error);
         });

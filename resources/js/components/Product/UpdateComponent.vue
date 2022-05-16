@@ -97,7 +97,7 @@ export default {
       this.updatedata()
         .then((response) => {
           //awsome notification create success
-          this.$eventHub.$emit("create-success", "Updated", response);
+          this.$eventHub.$emit("create-success", "Product update successfully", response);
           this.$router.push({ name: "product.summary" });
         })
         .catch((error) => {         
