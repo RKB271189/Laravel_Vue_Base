@@ -166,7 +166,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.$eventHub.$on("create-success", this.itemConfirmWithOk);
+    this.$eventHub.$on("create-success-popup", this.itemConfirmWithOk);
+    this.$eventHub.$on("create-success", this.itemCreated);
     this.$eventHub.$on("update-success", this.itemUpdated);
     this.$eventHub.$on("delete-success", this.itemDeleted);
   },
@@ -242,23 +243,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -501,7 +485,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.createdata().then(function (response) {
         //awsome notification create success
-        _this.$eventHub.$emit("create-success", "Created", response);
+        _this.$eventHub.$emit("create-success", "Product created successfully", response);
 
         _this.$router.push({
           name: "product.summary"
@@ -837,7 +821,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.updatedata().then(function (response) {
         //awsome notification create success
-        _this.$eventHub.$emit("create-success", "Updated", response);
+        _this.$eventHub.$emit("create-success", "Product update successfully", response);
 
         _this.$router.push({
           name: "product.summary"
@@ -933,7 +917,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       this.testsocket().then(function (response) {
-        _this.$eventHub.$emit("create-success", "Successfull", response);
+        _this.$eventHub.$emit("create-success-popup", "Successfull", response);
       });
     }
   })
