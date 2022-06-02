@@ -59,22 +59,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 /**End-here */
 
-import Echo from 'laravel-echo';
+// import Echo from 'laravel-echo';
 
-window.Pusher = require('pusher-js');
+// window.Pusher = require('pusher-js');
 
-window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: 'mysockettestkey',
-    cluster: 'mt1',
-    forceTLS: false,
-    encrypted: false,
-    wsHost: window.location.hostname,
-    wsPort: 6001,
-    wssPort: 6001,
-    disableStats: true,
-    enabledTransports: ['ws', 'wss'],
-    // auth: {
-    //     headers: { "X-CSRF-Token": tokenh },
-    //   },  
-});
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: 'mysockettestkey',
+//     cluster: 'mt1',
+//     forceTLS: false,
+//     encrypted: false,
+//     wsHost: window.location.hostname,
+//     wsPort: 6001,
+//     wssPort: 6001,
+//     disableStats: true,
+//     enabledTransports: ['ws', 'wss'],
+//     // auth: {
+//     //     headers: { "X-CSRF-Token": tokenh },
+//     //   },  
+// });
