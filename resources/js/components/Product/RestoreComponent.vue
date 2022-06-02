@@ -1,18 +1,30 @@
 <template>
-  <div class="col-md-11">
-    <div class="card">
-      <!-- Header of the page Apply cardprops details -->
-      <cardheader-component :headerprops="headerprops"></cardheader-component>
-      <div class="card-body">
-        <!-- Full screen loader -->
-        <loadingoverlay-component v-if="loading"></loadingoverlay-component>
-        <!-- Simple loader -->
-        <!-- <loadingtable-component v-if="loading"></loadingtable-component> -->
-        <!-- Product Summary Here -->
-        <datatable v-if="!loading" v-bind="$data" :data="product" />
+  <section class="content">
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="row">
+          <section class="col-lg-12 connectedSortable">
+            <div class="card">
+              <!-- Header of the page Apply cardprops details -->
+              <cardheader-component
+                :headerprops="headerprops"
+              ></cardheader-component>
+              <div class="card-body">
+                <!-- Full screen loader -->
+                <loadingoverlay-component
+                  v-if="loading"
+                ></loadingoverlay-component>
+                <!-- Simple loader -->
+                <!-- <loadingtable-component v-if="loading"></loadingtable-component> -->
+                <!-- Product Summary Here -->
+                <datatable v-if="!loading" v-bind="$data" :data="product" />
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -48,10 +60,10 @@ export default {
         cancel: true,
         button: "Proceed",
         color: "#dd4b39",
-        btnvalue:"Restore",
-        btnclass:"btn-success",
+        btnvalue: "Restore",
+        btnclass: "btn-success",
         btnaction: "restoredata",
-        btnbackaction: "fetchdeleteddata",        
+        btnbackaction: "fetchdeleteddata",
         eventfailed: "delete-success",
         eventsuccess: "update-success",
         deletemessage: "",

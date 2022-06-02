@@ -1,25 +1,37 @@
 <template>
-  <div class="col-md-11">
-    <div class="card">
-      <cardheader-component :headerprops="headerprops"></cardheader-component>
-      <div class="card-body">
-        <!-- Full screen loader -->
-        <loadingoverlay-component v-if="loading"></loadingoverlay-component>
-        <!-- Simple loader -->
-        <!-- <loadingtable-component v-if="loading"></loadingtable-component> -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="row">
+          <section class="col-lg-12 connectedSortable">
+            <div class="card">
+              <cardheader-component
+                :headerprops="headerprops"
+              ></cardheader-component>
+              <div class="card-body">
+                <!-- Full screen loader -->
+                <loadingoverlay-component
+                  v-if="loading"
+                ></loadingoverlay-component>
+                <!-- Simple loader -->
+                <!-- <loadingtable-component v-if="loading"></loadingtable-component> -->
+              </div>
+              <form @submit.prevent="submitfirebase" class="form-horizontal">
+                <cardfooter-component
+                  :footerprops="footerprops1"
+                ></cardfooter-component>
+              </form>
+              <form @submit.prevent="submitwebsocket" class="form-horizontal">
+                <cardfooter-component
+                  :footerprops="footerprops2"
+                ></cardfooter-component>
+              </form>
+            </div>
+          </section>
+        </div>
       </div>
-      <form @submit.prevent="submitfirebase" class="form-horizontal">
-        <cardfooter-component
-          :footerprops="footerprops1"
-        ></cardfooter-component>
-      </form>
-      <form @submit.prevent="submitwebsocket" class="form-horizontal">
-        <cardfooter-component
-          :footerprops="footerprops2"
-        ></cardfooter-component>
-      </form>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

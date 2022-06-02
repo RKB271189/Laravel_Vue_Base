@@ -1,35 +1,49 @@
 <template>
-  <div class="col-md-11">
-    <div class="card">
-      <!-- Header of the page Apply cardprops details -->
-      <cardheader-component :headerprops="headerprops"></cardheader-component>
-      <form @submit.prevent="submitform" class="form-horizontal">
-        <div class="card-body">
-          <!-- Full screen loader -->
-          <loadingoverlay-component v-if="loading"></loadingoverlay-component>
-          <!-- Simple loader -->
-          <!-- <loadingtable-component v-if="loading"></loadingtable-component> -->
-          <!-- Simple type text input form -->
-          <inputtext-component
-            :inputprops="input1"
-            :value="crt_updt_product.name"
-            :action="updatename"
-          ></inputtext-component>
-          <inputtext-component
-            :inputprops="input2"
-            :value="crt_updt_product.quantity"
-            :action="updatequantity"
-          ></inputtext-component>
-          <inputtext-component
-            :inputprops="input3"
-            :value="crt_updt_product.price"
-            :action="updateprice"
-          ></inputtext-component>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="row">
+          <section class="col-lg-12 connectedSortable">
+            <div class="card">
+              <!-- Header of the page Apply cardprops details -->
+              <cardheader-component
+                :headerprops="headerprops"
+              ></cardheader-component>
+              <form @submit.prevent="submitform" class="form-horizontal">
+                <div class="card-body">
+                  <!-- Full screen loader -->
+                  <loadingoverlay-component
+                    v-if="loading"
+                  ></loadingoverlay-component>
+                  <!-- Simple loader -->
+                  <!-- <loadingtable-component v-if="loading"></loadingtable-component> -->
+                  <!-- Simple type text input form -->
+                  <inputtext-component
+                    :inputprops="input1"
+                    :value="crt_updt_product.name"
+                    :action="updatename"
+                  ></inputtext-component>
+                  <inputtext-component
+                    :inputprops="input2"
+                    :value="crt_updt_product.quantity"
+                    :action="updatequantity"
+                  ></inputtext-component>
+                  <inputtext-component
+                    :inputprops="input3"
+                    :value="crt_updt_product.price"
+                    :action="updateprice"
+                  ></inputtext-component>
+                </div>
+                <cardfooter-component
+                  :footerprops="footerprops"
+                ></cardfooter-component>
+              </form>
+            </div>
+          </section>
         </div>
-        <cardfooter-component :footerprops="footerprops"></cardfooter-component>
-      </form>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";

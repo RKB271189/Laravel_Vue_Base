@@ -12,6 +12,8 @@ use App\ORM_Model\Fld_User\UserRepository;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -44,12 +46,19 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(\Illuminate\Http\Request $request)
     {
         //Validation and Others
 
         Validator::extend('mobile', function ($attribute, $value) {
             return preg_match('%^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$%i', $value) && strlen($value) == 10;
         });
+        if (env('APP_ENV') === 'local') {
+        } else {
+            URL::forceScheme('https');
+            if ($request->server->has('HTTP_X_ORIGINAL_HOST')) {
+                $this->app['url']->forceRootUrl($request->server->get('HTTP_X_FORWARDED_PROTO') . '://' . $request->server->get('HTTP_X_ORIGINAL_HOST'));
+            }
+        }
     }
 }

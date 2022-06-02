@@ -1,10 +1,23 @@
 <template>
-  <div class="col-md-11">
-    <div class="card">
-      <div class="card-header">Dashboard</div>
-      <div class="card-body">Welcome</div>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="row">
+          <section class="col-lg-12 connectedSortable">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Dashboard</h3>
+                <div class="card-tools"></div>
+                <div class="card-body">
+                 <!-- Content Here -->
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
