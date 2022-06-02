@@ -4,10 +4,8 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     @include('layouts.nav')
-    <div id="app" class="wrapper">
-        @if(Auth::check())
-        @include('layouts.side')
-        @endif
+    <div id="app" class="wrapper">        
+        @include('layouts.side')        
         @yield('content')
         <router-view></router-view>
         <eventhub-component></eventhub-component>

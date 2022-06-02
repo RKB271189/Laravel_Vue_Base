@@ -1,5 +1,5 @@
 <template>
-  <section class="content">
+  <section class="content pt-3">
     <div class="container-fluid">
       <div class="content-wrapper">
         <div class="row">

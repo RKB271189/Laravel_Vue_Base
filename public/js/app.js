@@ -21501,7 +21501,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "content" }, [
+    return _c("section", { staticClass: "content pt-3" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "content-wrapper" }, [
           _c("div", { staticClass: "row" }, [
@@ -21951,7 +21951,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "content" }, [
+  return _c("section", { staticClass: "content pt-3" }, [
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "content-wrapper" }, [
         _c("div", { staticClass: "row" }, [
@@ -22047,7 +22047,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "content" }, [
+  return _c("section", { staticClass: "content pt-3" }, [
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "content-wrapper" }, [
         _c("div", { staticClass: "row" }, [
@@ -22112,7 +22112,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "content" }, [
+  return _c("section", { staticClass: "content pt-3" }, [
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "content-wrapper" }, [
         _c("div", { staticClass: "row" }, [
@@ -22177,7 +22177,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "content" }, [
+  return _c("section", { staticClass: "content pt-3" }, [
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "content-wrapper" }, [
         _c("div", { staticClass: "row" }, [
@@ -22273,7 +22273,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "content" }, [
+  return _c("section", { staticClass: "content pt-3" }, [
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "content-wrapper" }, [
         _c("div", { staticClass: "row" }, [
