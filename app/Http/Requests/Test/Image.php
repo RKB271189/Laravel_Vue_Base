@@ -16,10 +16,11 @@ class Image extends FormRequest
      */
     public function authorize()
     {
-        if (Auth::check()) {
-            return true;
-        }
-        return false;
+        // if (Auth::check()) {
+        //     return true;
+        // }
+        // return false;
+        return true;
     }
 
     /**
@@ -30,7 +31,7 @@ class Image extends FormRequest
     public function rules()
     {
         return [
-            'document_1' => 'required',            
+            'document_1' => 'required',
         ];
     }
     public function messages()
