@@ -67,16 +67,19 @@ class TestController extends Controller
     /**
      * Function to save image {{Currently it is stored in public folder --- need to test for storage folder}}
      */
-    public function saveimage(Image $request){
-        try{
-            $filename='';
-            $error='';
-            $store=$this->SaveImageFromWeb($request,$filename,$error);
+    public function saveimage(Image $request)
+    {
+        try {
+            $filename = '';
+            $error = '';
+            //$store=$this->SaveImageFromWeb($request,$filename,$error);
+            $store = $this->SaveImageFromMobile($request, $filename, $error);
             //Store file name to database
-            if(!$store){
-                throw new Exception("Web Image Store Exception : ".__METHOD__." ".$error);
+            if (!$store) {
+                throw new Exception("Web Image Store Exception : " . __METHOD__ . " " . $error);
             }
-        }catch(Exception $ex){
+            return response()->json('Image Store Successfully', 200);
+        } catch (Exception $ex) {
             $this->WriteGeneralException($ex);
             if (config('app.env') === 'local') { //set to local in env file to indentify the error
                 return response()->json($ex->getMessage(), 500);
@@ -84,5 +87,9 @@ class TestController extends Controller
                 return response()->json('Server Error : Try again later.', 500);
             }
         }
+    }
+    public function testImage(Image $request)
+    {
+        return response()->json("Request Successfull", 200);
     }
 }

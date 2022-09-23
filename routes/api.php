@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/workhub/test/task', 'TestController@saveimage');
+Route::post('/workhub/test/simple', 'TestController@testImage');
