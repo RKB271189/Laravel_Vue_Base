@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<title>Base Project</title>
 @include('layouts.head')
 
 <body class="hold-transition sidebar-mini layout-fixed">
